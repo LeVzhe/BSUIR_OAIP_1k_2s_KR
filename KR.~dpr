@@ -3,8 +3,13 @@ program KR;
 {$APPTYPE CONSOLE}
 
 uses
-  SysUtils;
+  SysUtils,
+  Integrals in 'Integrals.pas',
+  RightRectangleInt in 'RightRectangleInt.pas',
+  CentralRectangleInt in 'CentralRectangleInt.pas',
+  CalculateIntegral in 'CalculateIntegral.pas';
 
 begin
-  { TODO -oUser -cConsole Main : Insert code here }
+  writeln('hello BSUIR KR');
+  readln;
 end.
