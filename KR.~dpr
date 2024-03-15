@@ -15,5 +15,6 @@ begin
   CentralRectangleInt.f1();
   RightRectangleInt.f1();
   Integrals.f1();
+  
   readln;
 end.
