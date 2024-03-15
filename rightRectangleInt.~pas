@@ -1,11 +1,24 @@
 unit RightRectangleInt;
 
 interface
-procedure f1;
+type
+  TFunc = function(x: Real): Real;
+
+function calc(func: TFunc; a, b: Real; n: Integer);
 
 implementation
-procedure f1();
+function calc(func: TFunc; a, b: Real; n: Integer);
+  var
+    h, sum: Real;
+    i: Integer;
   begin
-    writeln('right rect module');
+    h := (b - a) / n;
+    sum := 0;
+    for i := 1 to n do
+    begin
+      sum := sum + func(a + i * h);
+    end;
+
+    calc := h * sum;
   end;
 end.

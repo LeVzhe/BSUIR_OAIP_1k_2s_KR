@@ -3,18 +3,42 @@ program KR;
 {$APPTYPE CONSOLE}
 
 uses
-  SysUtils,
+  SysUtils, Windows,
   Integrals in 'Integrals.pas',
   RightRectangleInt in 'RightRectangleInt.pas',
   CentralRectangleInt in 'CentralRectangleInt.pas',
   CalculateIntegral in 'CalculateIntegral.pas';
 
+const
+  _E1 = 1e-2; // Заданная точность для первого случая
+  _E2 = 1e-3; // Заданная точность для второго случая
+
 begin
-  writeln('hello BSUIR KR');
-  CalculateIntegral.f1();
-  CentralRectangleInt.f1();
-  RightRectangleInt.f1();
-  //Integrals.f1();
-  
+  SetConsoleOutputCP(1251);
+
+  //для первой функции
+  CalculateIntegral.calc('RightRectangle', Integrals.f1, 1.3, 2.5, _E1);
+  CalculateIntegral.calc('RightRectangle', Integrals.f1, 1.3, 2.5, _E2);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f1, 1.3, 2.5, _E1);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f1, 1.3, 2.5, _E2);
+  writeln;
+  //для второй функции
+  CalculateIntegral.calc('RightRectangle', Integrals.f2, 0.4, 0.8, _E1);
+  CalculateIntegral.calc('RightRectangle', Integrals.f2, 0.4, 0.8, _E2);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f2, 0.4, 0.8, _E1);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f2, 0.4, 0.8, _E2);
+  writeln;
+  //для третьей функции
+  CalculateIntegral.calc('RightRectangle', Integrals.f3, 0.4, 1.2, _E1);
+  CalculateIntegral.calc('RightRectangle', Integrals.f3, 0.4, 1.2, _E2);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f3, 0.4, 1.2, _E1);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f3, 0.4, 1.2, _E2);
+  writeln;
+  //для четвертой функции
+  CalculateIntegral.calc('RightRectangle', Integrals.f4, 0.8, 1.2, _E1);
+  CalculateIntegral.calc('RightRectangle', Integrals.f4, 0.8, 1.2, _E2);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f4, 0.8, 1.2, _E1);
+  CalculateIntegral.calc('CentralRectangle', Integrals.f4, 0.8, 1.2, _E2);
+
   readln;
 end.

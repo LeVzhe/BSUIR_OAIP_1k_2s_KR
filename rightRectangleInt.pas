@@ -4,10 +4,10 @@ interface
 type
   TFunc = function(x: Real): Real;
 
-function calc(func: TFunc; a, b: Real; n: Integer);
+function calc(func: TFunc; a, b: Real; n: Integer):real;
 
 implementation
-function calc(func: TFunc; a, b: Real; n: Integer);
+function calc(func: TFunc; a, b: Real; n: Integer):real;
   var
     h, sum: Real;
     i: Integer;
