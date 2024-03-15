@@ -26,6 +26,6 @@ procedure calc(method: string; func: TFunc; a, b: Real; E: Real);
       n := n * 2; // ”дваиваем количество интервалов дл€ повышени€ точности
     until Abs(result - prevResult) < E;
 
-    writeln('»нтеграл использует ', method, ' метод с точностью ', E:0:3, ': ', result:0:3);
+    write(result:8:3, ' | ', n:5, ' | ');
   end;
 end.
